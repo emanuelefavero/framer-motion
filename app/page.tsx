@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className='font-bold text-xl'>Framer Motion</h1>
+      <h1>Framer Motion</h1>
 
       <h2>Keyframes</h2>
       <motion.div
@@ -35,12 +35,21 @@ export default function Home() {
         <p>Item 2</p>
       </motion.nav>
       <button
-        className='bg-indigo-600 text-white p-1'
         onClick={() => {
           setIsOpen(!isOpen)
         }}
       >
         {isOpen ? 'Close' : 'Open'}
+      </button>
+
+      <h2>Gesture Animations</h2>
+      <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        Button
+      </motion.button>
+
+      {/* The same button effect can be accomplished with tailwind or css like this: */}
+      <button className='hover:scale-110 active:scale-90 transition-transform duration-200'>
+        Button
       </button>
     </>
   )

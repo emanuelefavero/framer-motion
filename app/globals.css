@@ -2,10 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 0.3rem;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+button {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 0.25rem;
+
+  margin-bottom: 0.3rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
 }
