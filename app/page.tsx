@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -9,8 +9,19 @@ const variants = {
 }
 
 export default function Home() {
+  // VARIANTS
   const [isOpen, setIsOpen] = useState(false)
+
+  // DRAG
   const dragParentRef = useRef(null)
+
+  // MOTION VALUES
+  const x = useMotionValue(0)
+  const background = useTransform(
+    x, // background will change based on x value
+    [-50, 0, 50], // x values
+    ['#ff0051', '#bd9aff', 'rgb(0, 255, 94)']
+  )
 
   return (
     <>
@@ -80,6 +91,19 @@ export default function Home() {
           whileDrag={{ opacity: '50%' }}
         />
       </div>
+
+      {/* MOTION VALUES */}
+      <h2>Motion Values</h2>
+      <motion.div style={{ background }}>
+        <motion.div
+          className='w-10 h-10 bg-indigo-600 rounded-full cursor-grab'
+          drag='x'
+          dragConstraints={{ left: -0, right: 0 }}
+          // dragConstraints={{ left: -50, right: 50 }}
+
+          style={{ x }} // this div will affect the parent div's background color
+        ></motion.div>
+      </motion.div>
     </>
   )
 }
