@@ -15,3 +15,4 @@ Framer Motion is a production-ready motion library for React
 ## Resources
 
 - [Framer Motion Docs](https://www.framer.com/motion/introduction/)
+- [Framer Motion Examples](https://www.framer.com/motion/examples/)
