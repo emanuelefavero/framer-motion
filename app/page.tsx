@@ -160,7 +160,7 @@ export default function Home() {
       <h2>Scroll Linked Animations</h2>
       <p>See Top Progress Bar</p>
       <motion.div
-        className='fixed top-0 left-0 right-0 h-2 bg-indigo-500 transform origin-left'
+        className='fixed top-2 left-6 right-6 h-1 rounded-full bg-indigo-500 transform origin-left'
         style={{ scaleX }}
       />
 
