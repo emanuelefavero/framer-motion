@@ -1,7 +1,13 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useScroll,
+  useSpring,
+} from 'framer-motion'
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -22,6 +28,14 @@ export default function Home() {
     [-50, 0, 50], // x values
     ['#ff0051', '#bd9aff', 'rgb(0, 255, 94)']
   )
+
+  // SCROLL LINKED ANIMATIONS
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    restDelta: 0.001,
+  })
 
   return (
     <>
@@ -106,40 +120,46 @@ export default function Home() {
       </motion.div>
 
       {/* SCROLL TRIGGERED ANIMATIONS */}
-      <div>
-        <div className='w-full h-screen bg-indigo-100'></div>
-        <motion.div
-          className='w-32 h-32 bg-indigo-600 rounded-full cursor-grab'
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, transition: { duration: 2 } }}
-          viewport={{
-            once: true, // only animate once
-          }}
-        ></motion.div>
-        <div className='w-full h-screen bg-indigo-100'></div>
-        <motion.div
-          className='w-32 h-32 bg-indigo-600 cursor-grab'
-          initial={{
-            opacity: 0,
-            y: 100,
-            rotate: -10,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            rotate: 0,
-            transition: {
-              type: 'spring',
-              bounce: 0.5,
-              duration: 0.8,
-            },
-          }}
-          viewport={{
-            amount: 0.5, // 0.5 means half of the element is visible
-          }}
-        ></motion.div>
-        <div className='w-full h-screen bg-indigo-100'></div>
-      </div>
+      <div className='w-full h-screen bg-indigo-100'></div>
+      <motion.div
+        className='w-32 h-32 bg-indigo-600 rounded-full cursor-grab'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 2 } }}
+        viewport={{
+          once: true, // only animate once
+        }}
+      ></motion.div>
+      <div className='w-full h-screen bg-indigo-100'></div>
+      <motion.div
+        className='w-32 h-32 bg-indigo-600 cursor-grab'
+        initial={{
+          opacity: 0,
+          y: 100,
+          rotate: -10,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          rotate: 0,
+          transition: {
+            type: 'spring',
+            bounce: 0.5,
+            duration: 0.8,
+          },
+        }}
+        viewport={{
+          amount: 0.5, // 0.5 means half of the element is visible
+        }}
+      ></motion.div>
+      <div className='w-full h-screen bg-indigo-100'></div>
+
+      {/* SCROLL LINKED ANIMATIONS */}
+      <h2>Scroll Linked Animations</h2>
+      <p>See Top Progress Bar</p>
+      <motion.div
+        className='fixed top-0 left-0 right-0 h-2 bg-indigo-500 transform origin-left'
+        style={{ scaleX }}
+      />
     </>
   )
 }
