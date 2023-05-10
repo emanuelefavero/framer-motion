@@ -196,6 +196,18 @@ export default function Home() {
           }}
         />
       </div>
+
+      {/* MORE ANIMATIONS */}
+      <h2>More Animations</h2>
+      <p>
+        For more animations and effects visit{' '}
+        <a
+          className='text-indigo-700 font-semibold'
+          href='https://www.framer.com/motion/examples/'
+        >
+          Motion Framer Examples
+        </a>
+      </p>
     </>
   )
 }
