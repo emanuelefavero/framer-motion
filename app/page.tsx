@@ -37,6 +37,9 @@ export default function Home() {
     restDelta: 0.001,
   })
 
+  // LAYOUT ANIMATIONS
+  const [isOn, setIsOn] = useState(false)
+
   return (
     <>
       <h1>Framer Motion</h1>
@@ -160,6 +163,39 @@ export default function Home() {
         className='fixed top-0 left-0 right-0 h-2 bg-indigo-500 transform origin-left'
         style={{ scaleX }}
       />
+
+      {/* IMAGE GALLERY (Exit Animations) */}
+      <h2>Image Gallery (Exit Animations)</h2>
+      <p>
+        Check out{' '}
+        <a
+          className='text-indigo-700 font-semibold'
+          href='https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?from-embed=&file=/src/Example.tsx:132-136'
+          target='_blank'
+        >
+          this code sandbox
+        </a>{' '}
+        to see how to implement an image gallery in framer motion
+      </p>
+
+      {/* LAYOUT ANIMATIONS */}
+      <h2>Layout Animations</h2>
+      <div
+        className={`w-20 bg-indigo-200 flex justify-start items-center pt-[4px] pb-[0px] px-[6px] rounded-full cursor-pointer ${
+          isOn && 'justify-end'
+        }`}
+        onClick={() => setIsOn(!isOn)}
+      >
+        <motion.div
+          className='w-10 h-10 bg-indigo-500 rounded-full'
+          layout
+          transition={{
+            type: 'spring',
+            stiffness: 700,
+            damping: 30,
+          }}
+        />
+      </div>
     </>
   )
 }
