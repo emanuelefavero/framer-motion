@@ -104,6 +104,42 @@ export default function Home() {
           style={{ x }} // this div will affect the parent div's background color
         ></motion.div>
       </motion.div>
+
+      {/* SCROLL TRIGGERED ANIMATIONS */}
+      <div>
+        <div className='w-full h-screen bg-indigo-100'></div>
+        <motion.div
+          className='w-32 h-32 bg-indigo-600 rounded-full cursor-grab'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 2 } }}
+          viewport={{
+            once: true, // only animate once
+          }}
+        ></motion.div>
+        <div className='w-full h-screen bg-indigo-100'></div>
+        <motion.div
+          className='w-32 h-32 bg-indigo-600 cursor-grab'
+          initial={{
+            opacity: 0,
+            y: 100,
+            rotate: -10,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            rotate: 0,
+            transition: {
+              type: 'spring',
+              bounce: 0.5,
+              duration: 0.8,
+            },
+          }}
+          viewport={{
+            amount: 0.5, // 0.5 means half of the element is visible
+          }}
+        ></motion.div>
+        <div className='w-full h-screen bg-indigo-100'></div>
+      </div>
     </>
   )
 }
