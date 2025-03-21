@@ -164,20 +164,6 @@ export default function Home() {
         style={{ scaleX }}
       />
 
-      {/* IMAGE GALLERY (Exit Animations) */}
-      <h2>Image Gallery (Exit Animations)</h2>
-      <p>
-        Check out{' '}
-        <a
-          className='text-indigo-700 font-semibold'
-          href='https://codesandbox.io/s/framer-motion-image-gallery-pqvx3?from-embed=&file=/src/Example.tsx:132-136'
-          target='_blank'
-        >
-          this code sandbox
-        </a>{' '}
-        to see how to implement an image gallery in Motion
-      </p>
-
       {/* LAYOUT ANIMATIONS */}
       <h2>Layout Animations</h2>
       <div
@@ -196,18 +182,6 @@ export default function Home() {
           }}
         />
       </div>
-
-      {/* MORE ANIMATIONS */}
-      <h2>More Animations</h2>
-      <p>
-        For more animations and effects visit{' '}
-        <a
-          className='text-indigo-700 font-semibold'
-          href='https://www.framer.com/motion/examples/'
-        >
-          Motion Framer Examples
-        </a>
-      </p>
     </>
   )
 }
