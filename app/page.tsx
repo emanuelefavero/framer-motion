@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Framer Motion</h1>
+      <h1>Motion</h1>
 
       {/* KEYFRAMES */}
       <h2>Keyframes</h2>
@@ -175,7 +175,7 @@ export default function Home() {
         >
           this code sandbox
         </a>{' '}
-        to see how to implement an image gallery in framer motion
+        to see how to implement an image gallery in Motion
       </p>
 
       {/* LAYOUT ANIMATIONS */}
