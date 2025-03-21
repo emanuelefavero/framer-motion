@@ -7,7 +7,7 @@ import {
   useTransform,
   useScroll,
   useSpring,
-} from 'framer-motion'
+} from 'motion/react'
 
 const variants = {
   open: { opacity: 1, x: 0 },
