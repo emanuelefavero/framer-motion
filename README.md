@@ -1,6 +1,6 @@
 # Framer Motion
 
-This is a cheat sheet project repo for [Framer Motion](https://www.framer.com/motion/). It is built with Next.js, Typescript and Tailwind CSS.
+This is a cheat sheet project repo for [Motion](https://motion.dev/). It is built with Next.js, Typescript and Tailwind CSS.
 
 ## Getting Started
 
@@ -8,14 +8,13 @@ This is a cheat sheet project repo for [Framer Motion](https://www.framer.com/mo
 - Run `npm install` to install the dependencies
 - Run `npm run dev` to start the development server
 
-## What is Framer Motion?
+## What is Motion?
 
-Framer Motion is a production-ready motion library for React
+Motion (previously Framer Motion) is an animation library for React
 
 ## Resources
 
-- [Framer Motion Docs](https://www.framer.com/motion/introduction/)
-- [Framer Motion Examples](https://www.framer.com/motion/examples/)
+- [Framer Motion Docs](https://motion.dev/docs/react-quick-start)
 
 ## License
 
